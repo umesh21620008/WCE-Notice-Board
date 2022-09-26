@@ -152,7 +152,7 @@ button:active {
   border: 1px solid black;
   border-radius: 15px;
   margin: 15px 10px 0px;
-  overflow-x: hidden; /* For hiding scroll bar */
+  overflow-x: auto; /* For hiding scroll bar */
   overflow-y: auto;
   scrollbar-width: 0px;
 }
@@ -254,6 +254,10 @@ td {
 
   .tags select {
     margin: 0px;
+  }
+
+  .WCE_logo {
+    display: none;
   }
 }
 

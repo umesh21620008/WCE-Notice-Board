@@ -56,6 +56,8 @@ app.post("/home", (req, res) => {
   res.send(output);
 });
 
-app.listen("80", () => {
-  console.log("Server running at 80!");
+let port = "8080";
+
+app.listen(port, () => {
+  console.log("Server running at "+port);
 });

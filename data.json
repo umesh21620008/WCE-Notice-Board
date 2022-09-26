@@ -4,13 +4,19 @@
     "title": "Notice Title 0",
     "img": "https://www.datarobot.com/wp-content/uploads/2021/10/DataRobot-demo-sharing.jpg",
     "subtitle": "Notice Subtitle 0",
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
+    "description": "Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
     "id": 1,
     "title": "Notice Title 1",
     "img": "https://www.pendo.io/wp-content/uploads/2022/03/Pendo_2022_Group-Demo-Monthly-Webinar-Images_Featured-Asset-Image_Dark_1200x750_02-1.png",
     "subtitle": "Notice Subtitle 1",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
@@ -18,6 +24,9 @@
     "title": "Notice Title 2",
     "img": "http://mma.prnasia.com/media2/1755107/S2__Shinhan_Square__Bridge_Incheon__B2K_Demoday_Banner.jpg?p=medium600",
     "subtitle": "Notice Subtitle 2",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
@@ -25,6 +34,9 @@
     "title": "Notice Title 3",
     "img": "https://cdn03.boxcdn.net/sites/default/files/styles/767x512/public/2021-12/Demo%20web%20tile_Box%20Sign%20and%20SFDC-min.jpg?itok=4gQJs6Vg",
     "subtitle": "Notice Subtitle 3",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
@@ -32,6 +44,9 @@
     "title": "Notice Title 4",
     "img": "https://www.datarobot.com/wp-content/uploads/2021/10/DataRobot-demo-sharing.jpg",
     "subtitle": "Notice Subtitle 4",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
@@ -39,6 +54,9 @@
     "title": "Notice Title 5",
     "img": "https://www.pendo.io/wp-content/uploads/2022/03/Pendo_2022_Group-Demo-Monthly-Webinar-Images_Featured-Asset-Image_Dark_1200x750_02-1.png",
     "subtitle": "Notice Subtitle 5",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
@@ -46,6 +64,9 @@
     "title": "Notice Title 6",
     "img": "http://mma.prnasia.com/media2/1755107/S2__Shinhan_Square__Bridge_Incheon__B2K_Demoday_Banner.jpg?p=medium600",
     "subtitle": "Notice Subtitle 6",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
@@ -53,6 +74,9 @@
     "title": "Notice Title 7",
     "img": "https://cdn03.boxcdn.net/sites/default/files/styles/767x512/public/2021-12/Demo%20web%20tile_Box%20Sign%20and%20SFDC-min.jpg?itok=4gQJs6Vg",
     "subtitle": "Notice Subtitle 7",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
@@ -60,6 +84,9 @@
     "title": "Notice Title 8",
     "img": "https://www.datarobot.com/wp-content/uploads/2021/10/DataRobot-demo-sharing.jpg",
     "subtitle": "Notice Subtitle 8",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
@@ -67,6 +94,9 @@
     "title": "Notice Title 9",
     "img": "https://www.pendo.io/wp-content/uploads/2022/03/Pendo_2022_Group-Demo-Monthly-Webinar-Images_Featured-Asset-Image_Dark_1200x750_02-1.png",
     "subtitle": "Notice Subtitle 9",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
@@ -74,6 +104,9 @@
     "title": "Notice Title 10",
     "img": "http://mma.prnasia.com/media2/1755107/S2__Shinhan_Square__Bridge_Incheon__B2K_Demoday_Banner.jpg?p=medium600",
     "subtitle": "Notice Subtitle 10",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
@@ -81,6 +114,9 @@
     "title": "Notice Title 11",
     "img": "https://cdn03.boxcdn.net/sites/default/files/styles/767x512/public/2021-12/Demo%20web%20tile_Box%20Sign%20and%20SFDC-min.jpg?itok=4gQJs6Vg",
     "subtitle": "Notice Subtitle 11",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
@@ -88,6 +124,9 @@
     "title": "Notice Title 12",
     "img": "http://mma.prnasia.com/media2/1755107/S2__Shinhan_Square__Bridge_Incheon__B2K_Demoday_Banner.jpg?p=medium600",
     "subtitle": "Notice Subtitle 12",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   },
   {
@@ -95,6 +134,9 @@
     "title": "Notice Title 13",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjCoUtOal33JWLqals1Wq7p6GGCnr3o-lwpQ&usqp=CAU",
     "subtitle": "Notice Subtitle 13",
+    "date": "01-01-2022",
+    "notice_id": "NNDEPT01012022",
+    "download":"https://www.africau.edu/images/default/sample.pdf",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe!"
   }
 ]

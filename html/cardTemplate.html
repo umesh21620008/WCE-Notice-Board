@@ -1,6 +1,22 @@
-<card class="card">
-    <img src=" {%IMGSRC%} " alt="No Image" width="200" height="250">
-    <h2> {%CARDTITLE%} </h2>
-    <h3>{%CARDSUBTITLE%} </h3>
-    <p>{%DESCRIPTION%}</p><a href="#">read more..</a>
-</card>
+<tr>
+    <td>
+        <p class="cardgrid-item notice-title"> {%CARDTITLE%} </p>
+    </td>
+    <td>
+        <p class="cardgrid-item notice-subtitle">{%CARDSUBTITLE%} </p>
+    </td>
+    <td>
+        <p class="cardgrid-item notice-date">{%DATE%} </p>
+    </td>
+    <td>
+        <p class="cardgrid-item notice-id">{%NOTICEID%} </p>
+    </td>
+    <td>
+        <p class="cardgrid-item notice-description">{%DESCRIPTION%} <a href="#">read more..</a></p>
+    </td>
+    <td>
+        <a href="{%DOWNLOAD%}"><img class="cardgrid-item notice-download"
+                src="https://cdn.discordapp.com/attachments/856199547817820162/1024034710021734420/unknown.png"
+                alt="Download" srcset=""></a>
+    </td>
+</tr>

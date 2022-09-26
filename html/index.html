@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>WCE Notice Board</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://file.io/zNDtxbcyOtCQ" type="image/x-icon">
 </head>
 
 <style>
@@ -20,63 +20,80 @@
 <body>
     <nav class="navbar">
         <ul class="nav-list">
-            <img src="https://www.freepnglogos.com/uploads/simple-batman-logo-png-5.png" width="80" height="50"
-                alt="No image">
+            <img class="WCE_logo"
+                src="https://cdn.discordapp.com/attachments/856199547817820162/1023766795678662716/wceLogoPNG-removebg-preview.png"
+                width="80" height="50" alt="No image">
             <li class="nav-items"><a href="#">WCE Notice Board</a></li>
+            <button type="submit" class="logoutButton">Log Out</button>
         </ul>
     </nav>
 
-    <centerBlock class="grid1">
-        <leftColumn class="grid1-item">
-            <ul class="sidepanel">
-                <li class="side-items">
-                    <a href="#">Home</a>
-                </li>
-                <li class="side-items">
-                    <a href="#">Settings</a>
-                </li>
-                <li class="side-items">
-                    <a href="#">Help</a>
-                </li>
-                <li class="side-items">
-                    <a href="#">Log Out</a>
-                </li>
-            </ul>
-        </leftColumn>
-
-        <rightColumn class="grid1-item">
-            <div class="tags">
-                <form action="">
-                    <label for="type">Type:</label>
-                    <select name="type" id="type">
-                        <option value="everyone">Everyone</option>
-                        <option value="club">Club</option>
-                        <option value="myClass">My Class</option>
-                    </select>
-                    <label for="year">Year:</label>
-                    <select name="type" id="type">
-                        <option value="firstyear">First Year</option>
-                        <option value="secondYear">Second Year</option>
-                        <option value="thirdYear">Third Year</option>
-                        <option value="finalYear">Final Year</option>
-                    </select>
-                    <label for="branch">Branch:</label>
-                    <select name="type" id="type">
-                        <option value="civil">Civil</option>
-                        <option value="mechanical">Mechanical</option>
-                        <option value="electrical">Electrical</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="it">Information Technology</option>
-                        <option value="cse">Computer Science</option>
-                    </select>
-                    <button type="submit">Sort</button>
-                </form>
-            </div>
-            <div class="smallerBox">
+    <rightColumn class="grid1-item">
+        <div class="tags">
+            <form action="">
+                <label for="timestamp1">From:</label>
+                <input type="date" name="timestamp1" id="">
+                <label for="timestamp2">To:</label>
+                <input type="date" name="timestamp2" id="">
+                <label for="type">For:</label>
+                <select name="type" id="type">
+                    <option value="everyone">Everyone</option>
+                    <option value="club">Club</option>
+                    <option value="myClass">My Class</option>
+                </select>
+                <label for="year">Year:</label>
+                <select name="year" id="year">
+                    <option value="everyYear">Every Year</option>
+                    <option value="firstYear">First Year</option>
+                    <option value="secondYear">Second Year</option>
+                    <option value="thirdYear">Third Year</option>
+                    <option value="finalYear">Final Year</option>
+                </select>
+                <label for="branch">Branch:</label>
+                <select name="branch" id="branch">
+                    <option value="everyBranch">Every Branch</option>
+                    <option value="civil">Civil</option>
+                    <option value="mechanical">Mechanical</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="it">Information Technology</option>
+                    <option value="cse">Computer Science</option>
+                </select>
+                <button type="submit">Sort</button>
+            </form>
+            <form action="">
+                <label for="search">Search:</label>
+                <input class="searchInTable" type="text" name="search" id="">
+            </form>
+        </div>
+        <div class="smallerBox">
+            <!-- {%xyzCARDS%} -->
+            <table class="cardTable">
+                <tr>
+                    <th class="table-heading heading-title">
+                        Title
+                    </th>
+                    <th class="table-heading heading-subtitle">
+                        SubTitle
+                    </th>
+                    <th class="table-heading heading-date">
+                        Date
+                    </th>
+                    <th class="table-heading heading-id">
+                        Notice-id
+                    </th>
+                    <th class="table-heading heading-description">
+                        Description
+                    </th>
+                    <th class="table-heading heading-download">
+                        Download
+                    </th>
+                </tr>
                 {%CARDS%}
-            </div>
-        </rightColumn>
-    </centerBlock>
+            </table>
+        </div>
+    </rightColumn>
+    <!-- </centerBlock> -->
 </body>
 
 </html>

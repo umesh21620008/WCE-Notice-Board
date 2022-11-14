@@ -1,0 +1,136 @@
+h1{
+    color: blue;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+
+body{
+    background-color: rgb(126, 184, 220);
+}
+
+.from{
+    margin-left: 10px;
+    width: 260px;
+}
+
+#from{
+    margin-left: 50px;
+    width: 250px;
+}
+
+#to{
+    margin-left: 100px;
+}
+
+.to{
+    margin-left: 101px;
+    width: 255px;
+    height: 25px;
+}
+
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.full{
+    font-size: 22px;
+    font-weight: 500;
+    margin-left: 240px;
+    margin-top: 100px;
+}
+
+.text{
+    margin-left: 48px;
+    width: 255px;
+    height: 25px;
+}
+
+.for{
+    margin-left: 120px;
+    width: 260px;
+    height: 40px;
+}
+
+#year
+{
+    margin-left: 100px;
+}
+
+.year{
+    margin-left: 135px;
+    width: 260px;
+    height: 40px;
+}
+
+.branch{
+    margin-left: 85px;
+    width: 260px;
+    height: 40px;
+}
+
+#by{
+    margin-left: 100px;
+    width: 250px;
+    height: 25px;
+}
+
+.by{
+    margin-left: 80px;
+    width: 250px;
+    height: 25px;
+}
+
+#title{
+    margin-left: 110px;
+    width: 800px;
+    height: 25px;
+}
+
+#subTitle{
+    margin-left: 72px;
+    width: 800px;
+    height: 25px;
+}
+
+#desc{
+    margin-left: 40px;
+    width: 800px;
+    height: 100px;
+}
+
+#upload{
+    font-size: 20px;
+    background-color: rgb(86, 90, 207);
+    font-weight: 500;
+    margin-left: 160px;
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: sans-serif;
+    color: whitesmoke;
+}
+
+#send{
+    font-size: 20px;
+    background-color: rgb(86, 90, 207);
+    font-weight: 500;
+    margin-left: 580px;
+    width: 90px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: sans-serif;
+    color: whitesmoke;
+}
+
+#upload:hover{
+    box-shadow: 0 12px 16px 0 rgb(34, 101, 144), 0 17px 50px 0 rgb(57, 57, 230);
+    background-color: rgb(57, 57, 230);
+}
+
+#send:hover{
+    box-shadow: 0 12px 16px 0 rgb(34, 101, 144), 0 17px 50px 0 rgb(57, 57, 230);
+    background-color: rgb(57, 57, 230);
+}

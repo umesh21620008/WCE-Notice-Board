@@ -1,15 +1,18 @@
 {
-  "name": "card-generation",
+  "name": "noticeboardbackend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.0",
+    "router": "^1.3.7"
   }
 }

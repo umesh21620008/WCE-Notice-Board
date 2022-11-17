@@ -205,7 +205,9 @@ td {
 .heading-download {
   width: 5%;
 }
-
+.notice-download{
+  width: 50px;
+}
 .notice-title {
   font-weight: bold;
 }

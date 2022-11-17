@@ -9,17 +9,20 @@ app.use(express.static("./public"));
 
 app.use(express.urlencoded({ extended: true }));
 
+
+// Set EJS as templating engine
+app.set('view engine', 'ejs');
+
 app.get("/home", (req, res) => {
-  res.sendFile(`${__dirname}/public/html/index.html`);
-  //   res.send("/html/index.html");
+  res.render("index.ejs");
 });
 
 app.get("/post-notice", (req, res) => {
-  res.sendFile(`${__dirname}/public/html/login.html`);
+  res.render("login.ejs")
 });
 
 app.get("/create-notice", (req, res) => {
-  res.sendFile(`${__dirname}/public/html/Notice.html`);
+  res.render("Notice.ejs")
 });
 
 app.use("/", router);

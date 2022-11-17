@@ -10,20 +10,26 @@ exports.getAllNotices = async (req, res) => {
       .paginate()
       .filterFields();
 
-    const notices = await finalQuery.query;
+    const notice = await finalQuery.query;
 
-    res.status(200).json({
-      status: "success",
-      data: {
-        notices: notices,
-      },
-    });
+    res.status(200).render("index.ejs", {"notice":notice});
+    
+    // res.status(200).json({
+    //   status: "success",
+    //   data: {
+    //     notices: notice,
+    //   },
+    // });
+
+
   } catch (err) {
     res.status(400).json({
       status: "fail",
       message: err.message,
     });
+
   }
+
 };
 
 exports.getOneNotice = async (req, res) => {
@@ -55,7 +61,7 @@ exports.postNotice = async (req, res) => {
     //     notice: query,
     //   },
     // });
-    res.status(201).redirect("/home");
+    res.status(201).redirect("/");
   } catch (err) {
     res.status(400).json({
       status: "fail",

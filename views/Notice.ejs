@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/Notice.css">
 </head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     $(function () {
         var dtToday = new Date();
@@ -28,6 +28,10 @@
 
         $('.dates').attr('min', maxDate);
     });
+
+    function fileupload(){
+        console.log(object);
+    }
 </script>
 
 <body>
@@ -38,7 +42,7 @@
 
 
 
-        <form method="post" action="/"="application/json">
+        <form method="post" action="/"="application/json" enctype="multipart/form-data">
 
             <label for="from">From Date</label>
             <input name="startDate" type="date" class="text dates">
@@ -88,7 +92,8 @@
             <label for="desc">Description</label>
             <textarea id="desc" name="description"></textarea><br><br>
 
-            <button id="upload">Upload File</button>
+            <input type="file" name="uploadFile" id="download">
+            <!-- <button id="upload">Upload File</button> -->
             <!-- <button id="send">Send</button> -->
             <button type="submit" id="upload">Send</button>
 

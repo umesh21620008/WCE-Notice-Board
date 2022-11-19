@@ -12,24 +12,20 @@ exports.getAllNotices = async (req, res) => {
 
     const notice = await finalQuery.query;
 
-    res.status(200).render("index.ejs", {"notice":notice});
-    
+    res.status(200).render("index.ejs", { notice: notice });
+
     // res.status(200).json({
     //   status: "success",
     //   data: {
     //     notices: notice,
     //   },
     // });
-
-
   } catch (err) {
     res.status(400).json({
       status: "fail",
       message: err.message,
     });
-
   }
-
 };
 
 exports.getOneNotice = async (req, res) => {
@@ -51,9 +47,19 @@ exports.getOneNotice = async (req, res) => {
 
 exports.postNotice = async (req, res) => {
   try {
-    console.log(req.body);
-    req.body.notice_id = "NNDEPT01012022";
-    req.body.download = "https://www.africau.edu/images/default/sample.pdf";
+    let fileLink = req.protocol + "://" + req.headers.host;
+
+    if (req.file) {
+      fileLink =
+        req.protocol +
+        "://" +
+        req.headers.host +
+        "//noticeFiles//" +
+        req.file.filename;
+    }
+    console.log(fileLink);
+    req.body.notice_id = "NNDEPT01012022";  
+    req.body.download = fileLink;
     const query = await notices.create(req.body);
     // res.status(201).json({
     //   status: "success",

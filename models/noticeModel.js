@@ -5,16 +5,20 @@ const noticeSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
+    default: "Title",
     // unique: [true, "Unique notice title required!!"],
   },
   description: {
     type: String,
     trim: true,
+    default: "Description",
+
     // required: true,
   },
   subTitle: {
     type: String,
     trim: true,
+    default: "SubTitle",
     required: true,
   },
   startDate: {
@@ -27,17 +31,20 @@ const noticeSchema = new mongoose.Schema({
   },
   program: {
     type: String,
-    default: "BTech",
+    default: "Everyone",
   },
   branch: {
     type: String,
+    default: "Everyone",
   },
   author: {
     type: String,
+    default: "ME",
   },
   year: {
     type: String,
     required: true,
+    default: "Everyone",
   },
   notice_id: {
     type: String,
@@ -47,6 +54,7 @@ const noticeSchema = new mongoose.Schema({
   download: {
     type: String,
     trim: true,
+    default: "/",
   },
 });
 

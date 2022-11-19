@@ -4,17 +4,64 @@ class APIFeatures {
     this.reqQuery = reqQuery;
   }
 
+  // filter() {
+  //   const filterQueries = ["page", "sort", "limit", "fields"];
+  //   let reqQueryObj = { ...this.reqQuery };
+  //   const { startDate, endDate, type, year, branch } = { ...this.reqQuery };
+  //   if (!startDate) {
+  //     filterQueries.push("startDate");
+  //   }
+  //   if (!endDate) {
+  //     filterQueries.push("endDate");
+  //   }
+  //   if (!type || type == "everyone") {
+  //     filterQueries.push("type");
+  //   }
+  //   if (!year || year == "everyYear") {
+  //     filterQueries.push("year");
+  //   }
+  //   if (!branch || year == "everyBranch") {
+  //     filterQueries.push("branch");
+  //   }
+  //   filterQueries.forEach((ele) => delete reqQueryObj[ele]);
+  //   let reqQueryStr = JSON.stringify(reqQueryObj);
+  //   reqQueryStr = reqQueryStr.replace(
+  //     /\b(gte|lte|gt|lt)\b/g,
+  //     (match) => `$${match}`
+  //   );
+  //   reqQueryObj = JSON.parse(reqQueryStr);
+  //   this.query.find(reqQueryObj);
+  //   return this;
+  // }
+
   filter() {
-    const filterQueries = ["page", "sort", "limit", "fields"];
-    let reqQueryObj = { ...this.reqQuery };
-    filterQueries.forEach((ele) => delete reqQueryObj[ele]);
-    let reqQueryStr = JSON.stringify(reqQueryObj);
-    reqQueryStr = reqQueryStr.replace(
-      /\b(gte|lte|gt|lt)\b/g,
-      (match) => `$${match}`
-    );
-    reqQueryObj = JSON.parse(reqQueryStr);
-    this.query.find(reqQueryObj);
+    let finalQuery = {};
+
+    const { startDate, endDate, type, year, branch } = this.reqQuery;
+
+    if (startDate) {
+      finalQuery.startDate = startDate;
+    }
+    if (endDate) {
+      finalQuery.startDate = startDate;
+    }
+    if (!(!type || type == "Everyone")) {
+      finalQuery.type = type;
+    }
+    else
+    {
+      this.query.find(finalQuery);
+      this.query.find()
+    }
+    if (!(!year || year == "Everyone")) {
+      finalQuery.year = year;
+    }
+    if (!(!branch || branch == "Everyone")) {
+      finalQuery.branch = branch;
+    }
+
+    console.log(finalQuery);
+
     return this;
   }
 

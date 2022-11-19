@@ -1,4 +1,5 @@
 const express = require("express");
+let { router } = require("./../app");
 const app = require("./../app");
 const path = require("path");
 const multer = require("multer");
@@ -12,7 +13,18 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 const noticeController = require("./../controllers/noticeController");
+const userController = require("./../controllers/userController");
 router = express.Router();
+
+router
+  .route("/signin")
+  .get(userController.getSignin)
+  .post(userController.postSignin);
+
+router
+  .route("/signup")
+  .get(userController.getSignup)
+  .post(userController.postSignup);
 
 router
   .route("/")

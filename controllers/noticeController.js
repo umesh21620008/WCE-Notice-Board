@@ -1,10 +1,10 @@
 const notices = require("./../models/noticeModel");
 const APIFeatures = require("./../utils/APIFeatures");
 
-
-exports.createNotice = (req,res)=>{
+exports.createNotice = (req, res) => {
   res.render("notice.ejs");
-}
+};
+
 exports.getAllNotices = async (req, res) => {
   try {
     const query = notices.find();
@@ -14,9 +14,16 @@ exports.getAllNotices = async (req, res) => {
       .paginate()
       .filterFields();
 
-    const notice = await finalQuery.query;
+    let notice;
+    if (req.admin == true) {
+      notice = await finalQuery.query.find().where("email").equals(req.email);
+    } else {
+      notice = await finalQuery.query;
+    }
 
-    res.status(200).render("index.ejs", { notice: notice });
+    if (req.admin != true)
+      res.status(200).render("index.ejs", { notice: notice });
+    else return notice;
 
     // res.status(200).json({
     //   status: "success",
@@ -61,11 +68,29 @@ exports.postNotice = async (req, res) => {
         "//noticeFiles//" +
         req.file.filename;
     }
+
     req.body.email = req.email;
     // console.log(req.email);
     console.log(fileLink);
-    req.body.notice_id = "NNDEPT01012022";  
+    const date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    req.body.notice_id = req.email.slice(0, 2) + day + month + year;
     req.body.download = fileLink;
+
+    const noticeDeleteLink =
+      req.protocol +
+      "://" +
+      req.headers.host +
+      "/admin-dashboard/" +
+      req.body.notice_id;
+
+    req.body.noticeDeleteLink = noticeDeleteLink;
+
+    if (!req.body.startDate) delete req.body.startDate;
+    if (!req.body.endDate) delete req.body.endDate;
+
     const query = await notices.create(req.body);
     // res.status(201).json({
     //   status: "success",
@@ -102,15 +127,10 @@ exports.patchNotice = async (req, res) => {
   }
 };
 
-exports.deleteNotice = async (req, res) => {
+exports.deleteNotice = async (req, res, next) => {
   try {
-    const notice = await notices.findByIdAndDelete(req.body.id);
-    res.status(204).json({
-      status: "success",
-      data: {
-        notice,
-      },
-    });
+    const notice = await notices.findOneAndDelete(req.body.notice_id);
+    next();
   } catch (err) {
     res.status(400).json({
       status: "fail",

@@ -47,11 +47,9 @@ class APIFeatures {
     }
     if (!(!type || type == "Everyone")) {
       finalQuery.type = type;
-    }
-    else
-    {
+    } else {
       this.query.find(finalQuery);
-      this.query.find()
+      this.query.find();
     }
     if (!(!year || year == "Everyone")) {
       finalQuery.year = year;
@@ -59,8 +57,6 @@ class APIFeatures {
     if (!(!branch || branch == "Everyone")) {
       finalQuery.branch = branch;
     }
-
-    console.log(finalQuery);
 
     return this;
   }

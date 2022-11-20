@@ -21,14 +21,14 @@
 
 <body>
     <p id="noticeData" hidden>
-        <!-- <%= JSON.stringify(notice) %> -->
+        <%= JSON.stringify(notice) %>
     </p>
     <nav class="navbar">
         <ul class="nav-list">
             <img class="WCE_logo"
                 src="https://cdn.discordapp.com/attachments/856199547817820162/1023766795678662716/wceLogoPNG-removebg-preview.png"
                 width="80" height="50" alt="No image">
-            <li class="nav-items"><a href="#">Admin Dashboard</a></li>
+            <li class="nav-items"><a href="/admin-dashboard">Admin Dashboard</a></li>
             <form method="get" action="/create-notice">
                 <button type="submit" class="logoutButton">Post Notice</button>
             </form>
@@ -38,12 +38,12 @@
     <rightColumn class="grid1-item">
         <div class="tags">
             <form action="/admin-dashboard">
-<!-- 
+
                 <label for="startDate">From:</label>
                 <input type="date" name="startDate" id="">
 
                 <label for="endDate">To:</label>
-                <input type="date" name="endDate" id=""> -->
+                <input type="date" name="endDate" id="">
 
                 <label for="type">For:</label>
                 <select name="type" id="type">

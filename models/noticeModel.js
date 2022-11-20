@@ -56,9 +56,13 @@ const noticeSchema = new mongoose.Schema({
     trim: true,
     default: "/",
   },
-  email:{
-    type: String
-  }
+  email: {
+    type: String,
+  },
+  noticeDeleteLink: {
+    type: String,
+    default: "/",
+  },
 });
 
 const notices = mongoose.model("notices", noticeSchema);

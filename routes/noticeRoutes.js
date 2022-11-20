@@ -19,13 +19,14 @@ router = express.Router();
 
 router
   .route("/admin-dashboard")
-  .get(auth, userController.showDashboard)
+  .get(auth, userController.showDashboard, noticeController.getAllNotices)
   .post(auth, upload.single("uploadFile"), noticeController.postNotice);
 
-
 router
-  .route("/create-notice")
-  .get(auth, noticeController.createNotice);
+  .route("/admin-dashboard/delete")
+  .post(auth, noticeController.deleteNotice, userController.showDashboard);
+
+router.route("/create-notice").get(auth, noticeController.createNotice);
 router
   .route("/signin")
   .get(userController.getSignin)
@@ -36,10 +37,8 @@ router
   .get(userController.getSignup)
   .post(userController.postSignup);
 
-router
-  .route("/")
-  .get(noticeController.getAllNotices)
- 
+router.route("/").get(noticeController.getAllNotices);
+
 router
   .route("/:id")
   .get(noticeController.getOneNotice)

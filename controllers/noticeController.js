@@ -1,6 +1,10 @@
 const notices = require("./../models/noticeModel");
 const APIFeatures = require("./../utils/APIFeatures");
 
+
+exports.createNotice = (req,res)=>{
+  res.render("notice.ejs");
+}
 exports.getAllNotices = async (req, res) => {
   try {
     const query = notices.find();
@@ -57,6 +61,8 @@ exports.postNotice = async (req, res) => {
         "//noticeFiles//" +
         req.file.filename;
     }
+    req.body.email = req.email;
+    // console.log(req.email);
     console.log(fileLink);
     req.body.notice_id = "NNDEPT01012022";  
     req.body.download = fileLink;
@@ -67,7 +73,7 @@ exports.postNotice = async (req, res) => {
     //     notice: query,
     //   },
     // });
-    res.status(201).redirect("/");
+    res.status(201).redirect("/admin-dashboard");
   } catch (err) {
     res.status(400).json({
       status: "fail",

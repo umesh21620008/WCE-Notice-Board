@@ -1,12 +1,20 @@
 const userModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const SECRET_KEY = "NOTICEAPI";
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+
+exports.showDashboard = (req,res) =>{
+
+    let email = req.email;
+    // notices mai email vale user ki notices chhahiye
+    let notice ={};
+
+    return res.render("dashboard.ejs", {notice: notice});
+}
 exports.getSignin =  (req,res) => {
 
-
-    return req.render("login.ejs")
-
+    return res.render("login.ejs");
+   
 };
 
 exports.postSignin = async (req,res) => {
@@ -31,8 +39,15 @@ exports.postSignin = async (req,res) => {
 
         const token = jwt.sign({email: existingUser.email, id: existingUser._id}, SECRET_KEY);
 
-        return res.status(201).json({user:existingUser, token:token});
-
+        
+        // return res.status(201).render("dashboard.ejs");
+        return res
+        .cookie("access_token", token, {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === "production",
+          maxAge:3*24*60*60
+        })
+        .status(201).redirect("/admin-dashboard");
 
     }
     catch(error){
@@ -55,7 +70,7 @@ exports.postSignup = async (req,res) => {
     //User Creation
     //Token Generate
 
-    const {name, username, email, password, department} = req.body;
+    const {name, email, password, department} = req.body;
 
     try{
         const existingUser = await userModel.findOne({ email: email});
@@ -70,7 +85,6 @@ exports.postSignup = async (req,res) => {
 
             email: email,
             password:hashedPassword,
-            username: username,
             department: department
 
 

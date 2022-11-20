@@ -56,6 +56,9 @@ const noticeSchema = new mongoose.Schema({
     trim: true,
     default: "/",
   },
+  email:{
+    type: String
+  }
 });
 
 const notices = mongoose.model("notices", noticeSchema);

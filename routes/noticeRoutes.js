@@ -1,4 +1,5 @@
 const express = require("express");
+const auth = require("../middlewares/auth");
 let { router } = require("./../app");
 const app = require("./../app");
 const path = require("path");
@@ -17,6 +18,15 @@ const userController = require("./../controllers/userController");
 router = express.Router();
 
 router
+  .route("/admin-dashboard")
+  .get(auth, userController.showDashboard)
+  .post(auth, upload.single("uploadFile"), noticeController.postNotice);
+
+
+router
+  .route("/create-notice")
+  .get(auth, noticeController.createNotice);
+router
   .route("/signin")
   .get(userController.getSignin)
   .post(userController.postSignin);
@@ -29,8 +39,7 @@ router
 router
   .route("/")
   .get(noticeController.getAllNotices)
-  .post(upload.single("uploadFile"), noticeController.postNotice);
-
+ 
 router
   .route("/:id")
   .get(noticeController.getOneNotice)

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <title>WCE Notice Board</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon"
         href="https://cdn.discordapp.com/attachments/856199547817820162/1024026255043088394/favicon.ico"
@@ -21,29 +21,29 @@
 
 <body>
     <p id="noticeData" hidden>
-        <%= JSON.stringify(notice) %>
+        <!-- <%= JSON.stringify(notice) %> -->
     </p>
     <nav class="navbar">
         <ul class="nav-list">
             <img class="WCE_logo"
                 src="https://cdn.discordapp.com/attachments/856199547817820162/1023766795678662716/wceLogoPNG-removebg-preview.png"
                 width="80" height="50" alt="No image">
-            <li class="nav-items"><a href="#">WCE Notice Board</a></li>
-            <form method="get" action="/signin">
-                <button type="submit" class="logoutButton">Login</button>
+            <li class="nav-items"><a href="#">Admin Dashboard</a></li>
+            <form method="get" action="/create-notice">
+                <button type="submit" class="logoutButton">Post Notice</button>
             </form>
         </ul>
     </nav>
 
     <rightColumn class="grid1-item">
         <div class="tags">
-            <form action="/">
-
+            <form action="/admin-dashboard">
+<!-- 
                 <label for="startDate">From:</label>
                 <input type="date" name="startDate" id="">
 
                 <label for="endDate">To:</label>
-                <input type="date" name="endDate" id="">
+                <input type="date" name="endDate" id=""> -->
 
                 <label for="type">For:</label>
                 <select name="type" id="type">
@@ -102,6 +102,9 @@
                     </th>
                     <th class="table-heading heading-download">
                         Download
+                    </th>
+                    <th class="table-heading heading-download">
+                        Delete
                     </th>
                 </tr>
 

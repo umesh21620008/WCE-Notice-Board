@@ -1,15 +1,16 @@
 const userModel = require("../models/userModel");
+const notices = require("./../models/noticeModel");
+const APIFeatures = require("./../utils/APIFeatures");
 const bcrypt = require("bcrypt");
 const SECRET_KEY = "NOTICEAPI";
 const jwt = require("jsonwebtoken");
 
-exports.showDashboard = (req,res) =>{
+exports.showDashboard = async (req,res) =>{
 
     let email = req.email;
-    // notices mai email vale user ki notices chhahiye
-    let notice ={};
+   let notice = {};
 
-    return res.render("dashboard.ejs", {notice: notice});
+    return res.render("dashboard.ejs", {notice:notice});
 }
 exports.getSignin =  (req,res) => {
 

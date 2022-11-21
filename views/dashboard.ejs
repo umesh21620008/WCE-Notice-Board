@@ -17,6 +17,9 @@
 
 <style>
     /*STYLE*/
+    a{
+        text-decoration: none;
+    }
 </style>
 
 <body>
@@ -29,9 +32,9 @@
                 src="https://cdn.discordapp.com/attachments/856199547817820162/1023766795678662716/wceLogoPNG-removebg-preview.png"
                 width="80" height="50" alt="No image">
             <li class="nav-items"><a href="/admin-dashboard">Admin Dashboard</a></li>
-            <form method="get" action="/create-notice">
-                <button type="submit" class="logoutButton">Post Notice</button>
-            </form>
+            
+            <a class="logoutButton" href="/create-notice">Create Notice</a>
+            <a class="logoutButton" href="/logout">Logout</a>
         </ul>
     </nav>
 

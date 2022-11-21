@@ -20,6 +20,9 @@
     .notice-noticeDeleteLink {
         display: none;
     }
+    a{
+        text-decoration: none;
+    }
 </style>
 
 <body>
@@ -32,9 +35,8 @@
                 src="https://cdn.discordapp.com/attachments/856199547817820162/1023766795678662716/wceLogoPNG-removebg-preview.png"
                 width="80" height="50" alt="No image">
             <li class="nav-items"><a href="/">WCE Notice Board</a></li>
-            <form method="get" action="/signin">
-                <button type="submit" class="logoutButton">Login</button>
-            </form>
+    
+            <a href="/signin"  class="logoutButton">Login</a>
         </ul>
     </nav>
 

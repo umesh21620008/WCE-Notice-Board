@@ -15,8 +15,37 @@ exports.showDashboard = async (req, res) => {
 };
 
 exports.getSignin = (req, res) => {
-  return res.render("login.ejs");
+
+ try{
+  let token = req.cookies.access_token;
+  if(token){
+      
+      // token = token.split(" ")[1];
+      let user = jwt.verify(token, SECRET_KEY);
+      req.dept = user.dept;
+      req.email = user.email;
+     
+     res.redirect("/admin-dashboard");
+  }
+  else{
+      res.render("login.ejs");
+  }
+ }
+ catch(error){
+  res.render("login.ejs");
+ }
+
+
 };
+
+
+exports.logout = (req,res) =>{
+  return res
+  .clearCookie("access_token")
+  .status(200)
+  .redirect("/");
+}
+
 
 exports.postSignin = async (req, res) => {
   const { email, password } = req.body;
@@ -34,11 +63,10 @@ exports.postSignin = async (req, res) => {
     }
 
     const token = jwt.sign(
-      { email: existingUser.email, id: existingUser._id },
+      { email: existingUser.email,dept: existingUser.department, id: existingUser._id },
       SECRET_KEY
     );
 
-    // return res.status(201).render("dashboard.ejs");
     return res
       .cookie("access_token", token, {
         httpOnly: true,
@@ -78,7 +106,7 @@ exports.postSignup = async (req, res) => {
       password: hashedPassword,
       department: department,
     });
-    const token = jwt.sign({ email: result.email, id: result._id }, SECRET_KEY);
+    const token = jwt.sign({ email: result.email, dept: result.department, id: result._id }, SECRET_KEY);
 
     return res.status(201).json({ user: result, token: token });
   } catch (error) {

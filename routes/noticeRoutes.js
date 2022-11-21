@@ -18,6 +18,9 @@ const userController = require("./../controllers/userController");
 router = express.Router();
 
 router
+  .route("/logout")
+  .get(auth, userController.logout)
+router
   .route("/admin-dashboard")
   .get(auth, userController.showDashboard, noticeController.getAllNotices)
   .post(auth, upload.single("uploadFile"), noticeController.postNotice);

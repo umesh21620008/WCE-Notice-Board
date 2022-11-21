@@ -76,7 +76,8 @@ exports.postNotice = async (req, res) => {
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
-    req.body.notice_id = req.email.slice(0, 2) + day + month + year;
+    let seconds = Math.round(date.getSeconds() * Math.random() * 10);
+    req.body.notice_id = req.email.slice(0, 2) + day + month + year + seconds;
     req.body.download = fileLink;
 
     const noticeDeleteLink =

@@ -1,5 +1,12 @@
 const mongoose = require("mongoose");
 
+function getIndianDate() {
+  let date = new Date();
+  date = date - date.getTimezoneOffset() * 60000;
+  console.log(date);
+  return date;
+}
+
 const noticeSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -23,12 +30,12 @@ const noticeSchema = new mongoose.Schema({
   },
   startDate: {
     type: Date,
-    default: Date.now(),
+    default: getIndianDate(),
   },
-  endDate: {
-    type: Date,
-    default: Date.now(),
-  },
+  // endDate: {
+  //   type: Date,
+  //   default: Date.now(),
+  // },
   program: {
     type: String,
     default: "Everyone",

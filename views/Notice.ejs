@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/Notice.css">
+    <link rel="stylesheet" href="../css/Notice.css">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
@@ -44,11 +44,14 @@
 
         <form method="post" action="/admin-dashboard"="application/json" enctype="multipart/form-data">
 
-            <label for="from">From Date</label>
+            <label for="from">Date for notice</label>
             <input name="startDate" type="date" class="text dates">
 
-            <label for="to">To Date</label>
-            <input name="endDate" id="to" type="date" class="to dates"><br><br>
+            <!-- <label for="to">To Date</label>
+            <input name="endDate" id="to" type="date" class="to dates"><br><br> -->
+
+            <label for="by" id="by">Notice By</label>
+            <input name="author" type="text" class="by"><br><br>
 
             <label for="for">For</label>
             <select id="for" name="program" class="for">
@@ -66,9 +69,9 @@
                 <option value="Second Year">Second Year</option>
                 <option value="Third Year">Third Year</option>
                 <option value="Fourth Year">Fourth Year</option>
-            </select><br><br>
+            </select>
 
-            <label for="branch">Branch</label>
+            <br><br><label for="branch">Branch</label>
             <select id="branch" name="branch" class="branch">
                 <option value="Everyone" selected>Everyone</option>
                 <option value="Computer Science">Computer Science Engineering</option>
@@ -78,10 +81,9 @@
                 <option value="Mechanical Engineering">Mechanical Engineering</option>
                 <option value="Civil Engineering">Civil Engineering</option>
 
-            </select>
+            </select><br><br>
 
-            <label for="by" id="by">Notice By</label>
-            <input name="author" type="text" class="by"><br><br>
+
 
             <label for="title">Title</label>
             <input name="title" type="text" id="title"><br><br>

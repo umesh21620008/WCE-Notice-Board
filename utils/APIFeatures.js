@@ -40,16 +40,21 @@ class APIFeatures {
     const { startDate, endDate, type, year, branch } = this.reqQuery;
 
     if (startDate) {
-      finalQuery.startDate = startDate;
+      this.query.find({
+        startDate: {
+          $gte: this.reqQuery.startDate,
+        },
+      });
     }
     if (endDate) {
-      finalQuery.startDate = startDate;
+      this.query.find({
+        startDate: {
+          $lte: this.reqQuery.endDate,
+        },
+      });
     }
     if (!(!type || type == "Everyone")) {
-      finalQuery.type = type;
-    } else {
-      this.query.find(finalQuery);
-      this.query.find();
+      finalQuery.program = type;
     }
     if (!(!year || year == "Everyone")) {
       finalQuery.year = year;
@@ -57,6 +62,8 @@ class APIFeatures {
     if (!(!branch || branch == "Everyone")) {
       finalQuery.branch = branch;
     }
+
+    this.query.find(finalQuery);
 
     return this;
   }

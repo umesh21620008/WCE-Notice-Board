@@ -70,9 +70,9 @@ exports.postNotice = async (req, res) => {
     }
 
     req.body.email = req.email;
-    // console.log(req.email);
-    console.log(fileLink);
-    const date = new Date();
+    req.body.author = req.authorName;
+
+    let date = new Date();
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
@@ -89,7 +89,7 @@ exports.postNotice = async (req, res) => {
     req.body.noticeDeleteLink = noticeDeleteLink;
 
     if (!req.body.startDate) delete req.body.startDate;
-    if (!req.body.endDate) delete req.body.endDate;
+    // if (!req.body.endDate) delete req.body.endDate;
 
     const query = await notices.create(req.body);
     // res.status(201).json({

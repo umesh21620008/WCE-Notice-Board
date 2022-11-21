@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 function getIndianDate() {
   let date = new Date();
   date = date - date.getTimezoneOffset() * 60000;
-  console.log(date);
   return date;
 }
 

@@ -42,13 +42,16 @@ exports.postSignin = async (req, res) => {
   try {
     const existingUser = await userModel.findOne({ email: email });
     if (!existingUser) {
-      return res.status(404).json({ message: "User Not Found" });
+      // return res.status(404).json({ message: "User Not Found" });
+
+      return res.status(404).render("login.ejs");
     }
 
     const matchPassword = await bcrypt.compare(password, existingUser.password);
 
     if (!matchPassword) {
-      return res.status(400).json({ message: "Invalid Credentials" });
+      // return res.status(400).json({ message: "Invalid Credentials" });
+      return res.status(404).render("login.ejs");
     }
 
     const token = jwt.sign(
@@ -71,7 +74,8 @@ exports.postSignin = async (req, res) => {
       .redirect("/admin-dashboard");
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Something Went Wrong !!!" });
+    // res.status(500).json({ message: "Something Went Wrong !!!" });
+    res.status(500).render("login.ejs");
   }
 };
 

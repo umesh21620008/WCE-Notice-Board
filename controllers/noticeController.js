@@ -101,10 +101,11 @@ exports.postNotice = async (req, res) => {
     // });
     res.status(201).redirect("/admin-dashboard");
   } catch (err) {
-    res.status(400).json({
-      status: "fail",
-      message: err.message,
-    });
+    // res.status(400).json({
+    //   status: "fail",
+    //   message: err.message,
+    // });
+    res.status(400).render("Notice.ejs");
   }
 };
 
@@ -139,3 +140,7 @@ exports.deleteNotice = async (req, res, next) => {
     });
   }
 };
+
+exports.send404 = (req,res) =>{
+  res.status(404).render("error.ejs");
+}

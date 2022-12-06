@@ -6,9 +6,11 @@
 }
 
 body {
-  background: linear-gradient(45deg, #8500ff, #5acaff);
+  /* background: linear-gradient(45deg, #8500ff, #5acaff); */
+  background-color: #c3e8fff2;
   font-family: "Poppins", sans-serif;
   height: 100vh;
+  
 }
 
 #container {
@@ -31,7 +33,7 @@ body {
 }
 
 #container .content h2 {
-  font-size: 18vw;
+  font-size: 10vw;
   color: #000;
   line-height: 1em;
 }
@@ -48,7 +50,7 @@ body {
 }
 
 #container .content p {
-  color: #fff;
+  color: black;
   font-size: 1.2em;
 }
 

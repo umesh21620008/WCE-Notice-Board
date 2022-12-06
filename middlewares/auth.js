@@ -12,7 +12,8 @@ const auth = (req, res, next) => {
       req.authorName = user.name;
       next();
     } else {
-      res.status(401).json({ message: "Token not found " });
+      // res.status(401).json({ message: "Token not found " });
+      res.status(401).render("error.ejs")
     }
   } catch (error) {
     console.log(error);

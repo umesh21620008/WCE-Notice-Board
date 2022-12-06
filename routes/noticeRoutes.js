@@ -44,8 +44,11 @@ router.route("/").get(noticeController.getAllNotices);
 
 router
   .route("/:id")
-  .get(noticeController.getOneNotice)
+  // .get(noticeController.getOneNotice)
   .patch(noticeController.patchNotice)
   .delete(noticeController.deleteNotice);
 
+router
+  .route("*")
+  .get(noticeController.send404);
 module.exports = router;

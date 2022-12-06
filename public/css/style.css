@@ -206,12 +206,25 @@ td {
 .heading-download {
   width: 5%;
 }
-.notice-download {
-  width: 50px;
-}
+/* .notice-download {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+} */
 .notice-title {
   font-weight: bold;
 }
+
+.notice-noticeDeleteLink img {
+  width: 50%;
+  height: 50%;
+}
+
+.notice-noticeDeleteLink button {
+  background-color: white;
+  border: none;
+}
+
 /* ! Cards */
 
 .cardgrid-item {

@@ -54,13 +54,19 @@ class APIFeatures {
       });
     }
     if (!(!type || type == "Everyone")) {
-      finalQuery.program = type;
+      this.query.find({
+        $or: [{ type: { $eq: type } }, { type: { $eq: "Everyone" } }],
+      });
     }
     if (!(!year || year == "Everyone")) {
-      finalQuery.year = year;
+      this.query.find({
+        $or: [{ year: { $eq: year } }, { year: { $eq: "Everyone" } }],
+      });
     }
     if (!(!branch || branch == "Everyone")) {
-      finalQuery.branch = branch;
+      this.query.find({
+        $or: [{ branch: { $eq: branch } }, { branch: { $eq: "Everyone" } }],
+      });
     }
 
     this.query.find(finalQuery);
@@ -74,7 +80,7 @@ class APIFeatures {
       sortString = sortString.split(",").join(" ");
       this.query.sort(sortString);
     } else {
-      let sortString = "title";
+      let sortString = "startDate";
       sortString = sortString.split(",").join(" ");
       this.query.sort(sortString);
     }

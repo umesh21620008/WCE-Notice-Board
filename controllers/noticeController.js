@@ -131,7 +131,7 @@ exports.patchNotice = async (req, res) => {
 
 exports.deleteNotice = async (req, res, next) => {
   try {
-    const notice = await notices.findOneAndDelete(req.body.notice_id);
+    const notice = await notices.findOneAndDelete(req.body);
     next();
   } catch (err) {
     res.status(400).json({
@@ -141,6 +141,6 @@ exports.deleteNotice = async (req, res, next) => {
   }
 };
 
-exports.send404 = (req,res) =>{
+exports.send404 = (req, res) => {
   res.status(404).render("error.ejs");
-}
+};

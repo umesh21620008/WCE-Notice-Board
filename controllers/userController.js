@@ -65,7 +65,7 @@ exports.postSignin = async (req, res) => {
       .cookie("access_token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        maxAge: 3 * 24 * 60 * 60,
+        maxAge: 24 * 60 * 60 * 1000,
       })
       .status(201)
       .redirect("/admin-dashboard");

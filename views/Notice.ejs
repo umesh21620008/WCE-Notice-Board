@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/Notice.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/compose_notice.css">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
@@ -36,73 +37,110 @@
 
 <body>
 
-    <h1>Compose Notice</h1>
+    <div class="container">
+        <h1>Compose Notice</h1>
 
-    <div class="full">
+        <div class="full">
+
+            <form method="post" action="/admin-dashboard"="application/json" enctype="multipart/form-data">
+
+                <div class="row">
+                    <div class="column">
+                        <label for="from">Date for notice</label>
+                        <input name="startDate" type="date" id="date" class="text dates">
+                    </div>
+                    <div class="column">
+                        <label for="by" id="by">Notice By</label>
+                        <input name="author" type="text" id="by" class="by">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <label for="for">For</label><br>
+                        <select id="for" name="program" class="for">
+
+                            <option value="Everyone" selected>Everyone</option>
+                            <option value="Diploma">Diploma</option>
+                            <option value="BTech">BTech</option>
+                            <option value="MTech">MTech</option>
+                        </select>
+                    </div>
+
+                    <div class="column">
+                        <label for="year">Year</label><br>
+                        <select id="year" name="year" class="year">
+
+                            <option value="Everyone" selected>Everyone</option>
+                            <option value="First Year">First Year</option>
+                            <option value="Second Year">Second Year</option>
+                            <option value="Third Year">Third Year</option>
+                            <option value="Fourth Year">Fourth Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="column">
+                        <label for="branch">Branch</label>
+                        <select id="branch" name="branch" class="branch">
+                            <option value="Everyone" selected>Everyone</option>
+                            <option value="Computer Science">Computer Science Engineering</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Electronics Engineering">Electronics Engineering</option>
+                            <option value="Electrical Engineering">Electrical Engineering</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option value="Civil Engineering">Civil Engineering</option>
+
+                        </select>
+                    </div>
 
 
+                    <div class="column">
+                        <label for="title">Title</label>
+                        <input name="title" type="text" id="title" placeholder="Title of Notice">
+                    </div>
+                </div>
 
-        <form method="post" action="/admin-dashboard"="application/json" enctype="multipart/form-data">
 
-            <label for="from">Date for notice</label>
-            <input name="startDate" type="date" class="text dates">
+                <div class="row">
+                    <div class="column">
+                        <label for="subtitle">Subtitle</label>
+                        <input name="subTitle" type="text" id="subtitle" placeholder="Subtitle of Notice">
+                    </div>
+                </div>
 
-            <!-- <label for="to">To Date</label>
+                <div class="row">
+                    <div class="column">
+                        <label for="issue">Description</label>
+                        <textarea name="description" id="desc" placeholder="Describe your notice in detail here"
+                            rows="3"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="row1">
+
+                    <div class="column1">
+                        <input type="file" name="uploadFile" id="download">
+                    </div>
+                    <!-- <button id="upload">Upload File</button> -->
+
+                    <div class="column1">
+                        <button type="submit" id="upload">Submit</button>
+                    </div>
+                </div>
+
+                <!-- <label for="to">To Date</label>
             <input name="endDate" id="to" type="date" class="to dates"><br><br> -->
 
-            <label for="by" id="by">Notice By</label>
-            <input name="author" type="text" class="by"><br><br>
-
-            <label for="for">For</label>
-            <select id="for" name="program" class="for">
-
-                <option value="Everyone" selected>Everyone</option>
-                <option value="Diploma">Diploma</option>
-                <option value="BTech">BTech</option>
-                <option value="MTech">MTech</option>
-            </select>
-
-            <label for="year" id="year">Year</label>
-            <select name="year" class="year">
-                <option value="Everyone" selected>Everyone</option>
-                <option value="First Year">First Year</option>
-                <option value="Second Year">Second Year</option>
-                <option value="Third Year">Third Year</option>
-                <option value="Fourth Year">Fourth Year</option>
-            </select>
-
-            <br><br><label for="branch">Branch</label>
-            <select id="branch" name="branch" class="branch">
-                <option value="Everyone" selected>Everyone</option>
-                <option value="Computer Science">Computer Science Engineering</option>
-                <option value="Information Technology">Information Technology</option>
-                <option value="Electronics Engineering">Electronics Engineering</option>
-                <option value="Electrical Engineering">Electrical Engineering</option>
-                <option value="Mechanical Engineering">Mechanical Engineering</option>
-                <option value="Civil Engineering">Civil Engineering</option>
-
-            </select><br><br>
+            </form>
 
 
-
-            <label for="title">Title</label>
-            <input name="title" type="text" id="title"><br><br>
-
-            <label for="subTitle">SubTitle</label>
-            <input name="subTitle" type="text" id="subTitle"><br><br>
-
-            <label for="desc">Description</label>
-            <textarea id="desc" name="description"></textarea><br><br>
-
-            <input type="file" name="uploadFile" id="download">
-            <!-- <button id="upload">Upload File</button> -->
-            <!-- <button id="send">Send</button> -->
-            <button type="submit" id="upload">Send</button>
-
-        </form>
-
-
+        </div>
     </div>
+
 
 </body>
 

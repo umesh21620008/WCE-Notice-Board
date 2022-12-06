@@ -1,6 +1,6 @@
 /* ! ALL */
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
@@ -205,7 +205,7 @@ td {
 .heading-download {
   width: 5%;
 }
-.notice-download{
+.notice-download {
   width: 50px;
 }
 .notice-title {

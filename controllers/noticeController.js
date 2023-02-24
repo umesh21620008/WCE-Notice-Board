@@ -60,14 +60,21 @@ exports.postNotice = async (req, res) => {
   try {
     let fileLink = req.protocol + "://" + req.headers.host;
 
+    // if (req.file) {
+    //   fileLink =
+    //     req.protocol +
+    //     "://" +
+    //     req.headers.host +
+    //     "//noticeFiles//" +
+    //     req.file.filename;
+    // }
     if (req.file) {
       fileLink =
-        req.protocol +
-        "://" +
-        req.headers.host +
+      process.env.NOTICEDELLINKFRONT +
         "//noticeFiles//" +
         req.file.filename;
     }
+
 
     req.body.email = req.email;
     req.body.author = req.authorName;
@@ -80,9 +87,14 @@ exports.postNotice = async (req, res) => {
     req.body.notice_id = req.email.slice(0, 2) + day + month + year + seconds;
     req.body.download = fileLink;
 
+    // const noticeDeleteLink =
+    //   req.protocol +
+    //   "://" +
+    //   req.headers.host +
+    //   "/admin-dashboard/" +
+    //   req.body.notice_id;
     const noticeDeleteLink =
-      req.protocol +
-      "://" +
+      process.env.NOTICEDELLINKFRONT +
       req.headers.host +
       "/admin-dashboard/" +
       req.body.notice_id;

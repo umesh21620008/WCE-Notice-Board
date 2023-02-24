@@ -2,7 +2,7 @@ const notices = require("./../models/noticeModel");
 const APIFeatures = require("./../utils/APIFeatures");
 
 exports.createNotice = (req, res) => {
-  res.render("notice.ejs");
+  res.render("Notice.ejs");
 };
 
 exports.getAllNotices = async (req, res) => {

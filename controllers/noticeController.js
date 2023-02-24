@@ -1,5 +1,6 @@
 const notices = require("./../models/noticeModel");
 const APIFeatures = require("./../utils/APIFeatures");
+const dotenv = require("dotenv");
 
 exports.createNotice = (req, res) => {
   res.render("Notice.ejs");
@@ -25,12 +26,7 @@ exports.getAllNotices = async (req, res) => {
       res.status(200).render("index.ejs", { notice: notice });
     else return notice;
 
-    // res.status(200).json({
-    //   status: "success",
-    //   data: {
-    //     notices: notice,
-    //   },
-    // });
+  
   } catch (err) {
     res.status(400).json({
       status: "fail",
@@ -58,23 +54,14 @@ exports.getOneNotice = async (req, res) => {
 
 exports.postNotice = async (req, res) => {
   try {
-    let fileLink = req.protocol + "://" + req.headers.host;
+    let fileLink = process.env.NOTICEDELLINKFRONT + "/admin-dashboard"
 
-    // if (req.file) {
-    //   fileLink =
-    //     req.protocol +
-    //     "://" +
-    //     req.headers.host +
-    //     "//noticeFiles//" +
-    //     req.file.filename;
-    // }
-    if (req.file) {
+      if (req.file) {
       fileLink =
-      process.env.NOTICEDELLINKFRONT +
+        process.env.NOTICEDELLINKFRONT + 
         "//noticeFiles//" +
         req.file.filename;
     }
-
 
     req.body.email = req.email;
     req.body.author = req.authorName;
@@ -87,36 +74,20 @@ exports.postNotice = async (req, res) => {
     req.body.notice_id = req.email.slice(0, 2) + day + month + year + seconds;
     req.body.download = fileLink;
 
-    // const noticeDeleteLink =
-    //   req.protocol +
-    //   "://" +
-    //   req.headers.host +
-    //   "/admin-dashboard/" +
-    //   req.body.notice_id;
+
     const noticeDeleteLink =
       process.env.NOTICEDELLINKFRONT +
-      req.headers.host +
       "/admin-dashboard/" +
       req.body.notice_id;
 
     req.body.noticeDeleteLink = noticeDeleteLink;
 
     if (!req.body.startDate) delete req.body.startDate;
-    // if (!req.body.endDate) delete req.body.endDate;
 
     const query = await notices.create(req.body);
-    // res.status(201).json({
-    //   status: "success",
-    //   data: {
-    //     notice: query,
-    //   },
-    // });
+
     res.status(201).redirect("/admin-dashboard");
   } catch (err) {
-    // res.status(400).json({
-    //   status: "fail",
-    //   message: err.message,
-    // });
     res.status(400).render("Notice.ejs");
   }
 };

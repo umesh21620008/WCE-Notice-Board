@@ -1,6 +1,6 @@
 const notices = require("./../models/noticeModel");
 const APIFeatures = require("./../utils/APIFeatures");
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 
 exports.createNotice = (req, res) => {
   res.render("Notice.ejs");

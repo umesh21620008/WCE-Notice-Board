@@ -1,8 +1,11 @@
 const app = require("./app");
+
+// following only for Localhost to use environment variables
 // const dotenv = require("dotenv");
 // dotenv.config({
 //   path: "./config.env",
 // });
+
 const mongoose = require("mongoose");
 
 const db = process.env.DATABASE;

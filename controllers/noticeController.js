@@ -1,5 +1,7 @@
 const notices = require("./../models/noticeModel");
 const APIFeatures = require("./../utils/APIFeatures");
+
+// only for Localhost to use environment variables
 // const dotenv = require("dotenv");
 
 exports.createNotice = (req, res) => {

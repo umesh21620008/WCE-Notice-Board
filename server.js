@@ -6,6 +6,8 @@ const app = require("./app");
 //   path: "./config.env",
 // });
 let a = 8/0;
+nonExistentFunction();
+
 const mongoose = require("mongoose");
 
 const db = process.env.DATABASE;
